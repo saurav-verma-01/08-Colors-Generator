@@ -1,4 +1,10 @@
+import ColorForm from "./components/ColorForm";
+
 const App = () => {
-  return <h2>Color Generator Starter</h2>;
+  return (
+    <main>
+      <ColorForm />
+    </main>
+  );
 };
 export default App;
