@@ -15,7 +15,6 @@ main {
 
 .color-form {
   width: max-content;
-
   border: 2px solid #09225b;
   padding: 2rem 4rem;
   border-radius: 0.5rem;
@@ -71,12 +70,11 @@ main {
 .container {
   width: 100%;
   position: absolute;
-  /* background-color: orangered; */
   padding: 2rem 3rem;
 
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
   justify-content: center;
 }
 .tints-container {
@@ -93,8 +91,8 @@ main {
 
 .color-block {
   color: inherit;
-  width: 10rem;
-  height: 10rem;
+  width: 8rem;
+  height: 8rem;
   border: 2px solid #0f172a;
   display: flex;
   align-items: center;
@@ -108,4 +106,21 @@ main {
   width: 100%;
   height: 60%;
   z-index: -1;
+}
+
+@media (max-width: 80em) {
+  .container {
+    padding: 1rem 1.5rem;
+  }
+  .tints-container {
+    top: 1rem;
+  }
+  .shades-container {
+    bottom: 1rem;
+    flex-wrap: wrap-reverse;
+  }
+  .color-block {
+    width: 6rem;
+    height: 6rem;
+  }
 }

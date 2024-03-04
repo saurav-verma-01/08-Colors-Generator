@@ -27,12 +27,12 @@ const App = () => {
       <ColorForm onSubmit={handleColorSubmit} />
       <ColorsContainer className="tints-container">
         {tints.map((tint) => (
-          <ColorBlock color={tint} />
+          <ColorBlock color={tint} key={tint.hex} />
         ))}
       </ColorsContainer>
       <ColorsContainer className="shades-container">
         {shades.map((shade) => (
-          <ColorBlock color={shade} />
+          <ColorBlock color={shade} key={shade.hex} />
         ))}
       </ColorsContainer>
     </main>
