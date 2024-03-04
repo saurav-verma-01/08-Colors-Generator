@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 
-const ColorForm = () => {
+const ColorForm = ({ onSubmit }) => {
   const [color, setColor] = useState("#09225b");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(color);
+  };
   const handleColorChange = (e) => {
     e.preventDefault();
     // console.log(e);
     setColor(e.target.value);
   };
   return (
-    <section className="color-form">
+    <section className="color-form" onSubmit={handleSubmit}>
       <form>
         <label htmlFor="color" className="color-label">
           Pick Color{" "}

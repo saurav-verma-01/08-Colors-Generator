@@ -19,6 +19,7 @@ main {
   border: 2px solid #09225b;
   padding: 2rem 4rem;
   border-radius: 0.5rem;
+  background-color: #fff;
 }
 
 .color-form form {
@@ -65,4 +66,46 @@ main {
   cursor: pointer;
   background-color: #09225b;
   color: white;
+}
+
+.container {
+  width: 100%;
+  position: absolute;
+  /* background-color: orangered; */
+  padding: 2rem 3rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.tints-container {
+  top: 2rem;
+  color: #0f172a;
+}
+.shades-container {
+  color: #f7f8fc;
+  bottom: 2rem;
+  .color-block {
+    border: 2px solid #f7f8fc;
+  }
+}
+
+.color-block {
+  color: inherit;
+  width: 10rem;
+  height: 10rem;
+  border: 2px solid #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.base-color {
+  position: absolute;
+  width: 100%;
+  height: 60%;
+  z-index: -1;
 }
