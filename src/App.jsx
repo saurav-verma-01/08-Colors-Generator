@@ -3,13 +3,19 @@ import ColorForm from "./components/ColorForm";
 import { useState } from "react";
 import ColorBlock from "./components/ColorBlock";
 import ColorsContainer from "./components/ColorsContainer";
+import { ToastContainer, toast } from "react-toastify";
 
 const App = () => {
   const [colorPallete, setColorPallete] = useState(
     new Values("#09225b").all(12)
   );
   const handleColorSubmit = (color) => {
-    setColorPallete(new Values(color).all(12));
+    try {
+      const newColors = new Values(color).all(15);
+      setColorPallete(newColors);
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   const tints = colorPallete.filter((color) => color.type === "tint");
@@ -35,6 +41,7 @@ const App = () => {
           <ColorBlock color={shade} key={shade.hex} />
         ))}
       </ColorsContainer>
+      <ToastContainer position="top-center" />
     </main>
   );
 };
